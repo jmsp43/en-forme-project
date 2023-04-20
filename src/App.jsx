@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Custom from './components/Custom'
 import Form from './components/Form'
 import Header from './components/Header'
 import Nav from './components/Nav'
@@ -13,7 +14,8 @@ function App() {
         <Header />
         <Nav />
         <Form />
-        <FetchWorkouts/>
+        <FetchWorkouts />
+        <Custom />
         </div>
     </div>
   )

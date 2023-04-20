@@ -1,9 +1,94 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Form() {
+  // const [muscleState, setMuscleState] = useState('')
+  // const [workoutState, setWorkoutState] = useState('')
+  // const [difficultyState, setDifficultyState] = useState('')
+
+  const [formState, setFormState] = useState({});
+
+  let muscles = [
+    "abdominals",
+    "abductors",
+    "adductors",
+    "biceps",
+    "calves",
+    "chest",
+    "forearms",
+    "glutes",
+    "hamstrings",
+    "lats",
+    "lower_back",
+    "middle_back",
+    "neck",
+    "quadriceps",
+    "traps",
+    "triceps",
+  ];
+  const mapMuscles = muscles.map((muscle, i) => {
+    return (
+      <option key={i} value={muscle}>
+        {muscle}
+      </option>
+    );
+  });
+
+  const types = [
+    "cardio",
+    "olympic_weightlifting",
+    "plyometrics",
+    "powerlifting",
+    "strength",
+    "stretching",
+    "strongman",
+  ];
+
+  const mapTypes = types.map((workoutType, i) => {
+    return (
+      <option key={i} value={workoutType}>
+        {workoutType}
+      </option>
+    );
+  });
+
+  const difficultyLvls = ["beginner", "intermediate", "expert"];
+
+  const mapDiffLvls = difficultyLvls.map((diffLvl, i) => {
+    return (
+      <option key={i} value={diffLvl}>
+        {diffLvl}
+      </option>
+    );
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    //musclesQ
+    let muscleChoiceVal = e.target.children[1].children[2].value;
+    //typeQ
+    let workoutTypeVal = e.target.children[2].children[2].value;
+    //difficultyQ
+    let difficultyChoiceVal = e.target.children[3].children[2].value;
+    //addedWorkoutQ
+    let addedWorkoutVal = e.target.children[4].children[1].value;
+
+    //sets state to object containing choices
+    setFormState({
+      muscleChoiceVal,
+      workoutTypeVal,
+      difficultyChoiceVal,
+      addedWorkoutVal,
+    });
+    console.log(formState);
+
+    //search api data for muscle, workoutType, diffLvl, and addedWorkout
+    //retrieve those results
+  }
+
   return (
     <div>
-      <section className="wholeForm">
+      <form onSubmit={handleSubmit} className="wholeForm">
         <h3>Let's get started!</h3>
 
         <div className="firstQ">
@@ -14,7 +99,7 @@ export default function Form() {
             id="muscleChoice"
             name="muscleChoice"
           >
-            <option value="quadriceps">Quadriceps</option>
+            {mapMuscles}
           </select>
         </div>
 
@@ -28,7 +113,7 @@ export default function Form() {
             id="typeChoice"
             name="typeChoice"
           >
-            <option value="powerlifting">Powerlifting</option>
+            {mapTypes}
           </select>
         </div>
 
@@ -42,16 +127,21 @@ export default function Form() {
             id="difficultyChoice"
             name="difficultyChoice"
           >
-            <option value="beginner">Beginner</option>
+            {mapDiffLvls}
           </select>
         </div>
 
         <div className="fourthQ">
           <p>Is there a particular workout you'd like to add to the regimen?</p>
-          <input placeholder="search for workout"></input>
+          <input
+            id="addedWorkout"
+            placeholder="search for workout"
+            path="?name="
+          ></input>
         </div>
-        <button>Get My Custom Workout</button>
-      </section>
+
+        <input type="submit" value="Get Custom Workout" />
+      </form>
     </div>
   );
 }

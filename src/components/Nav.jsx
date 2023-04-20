@@ -6,9 +6,9 @@ export default function Nav() {
     <div>
       <nav className="nav">
         <Router>
-          <Link className= 'missionNav' to="www.google.com">Our Mission</Link>
-          <Link className = 'libraryNav' to="www.google.com">Exercise Library</Link>
-          <Link className = 'premiumNav' to="www.google.com">Go Premium</Link>
+          <Link className= 'missionNav' to="/mission">Our Mission</Link>
+          <Link className = 'libraryNav' to="/library">Exercise Library</Link>
+          <Link className = 'premiumNav' to="/premium">Go Premium</Link>
         </Router>
       </nav>
     </div>
