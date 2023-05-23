@@ -1,12 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Form() {
-  // const [muscleState, setMuscleState] = useState('')
-  // const [workoutState, setWorkoutState] = useState('')
-  // const [difficultyState, setDifficultyState] = useState('')
-
-  const [formState, setFormState] = useState({});
+    const [formState, setFormState] = useState({});
+    
+    // useEffect(() => {
+    //     console.log('useEffect running')
+    //     setFormState({muscleChoiceVal: 'abdominals', workoutTypeVal: 'cardio', difficultyChoiceVal: 'beginner', addedWorkoutVal: ''})
+    // },[])
 
   let muscles = [
     "abdominals",
@@ -62,6 +63,16 @@ export default function Form() {
     );
   });
 
+    
+    function customizeWorkout() {
+          //search api data for muscle, workoutType, diffLvl, and addedWorkout
+    //retrieve those results
+        //send to custom page component
+  }
+    
+    
+    
+    
   function handleSubmit(e) {
     e.preventDefault();
     //musclesQ
@@ -82,8 +93,8 @@ export default function Form() {
     });
     console.log(formState);
 
-    //search api data for muscle, workoutType, diffLvl, and addedWorkout
-    //retrieve those results
+    customizeWorkout()
+
   }
 
   return (

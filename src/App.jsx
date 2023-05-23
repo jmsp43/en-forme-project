@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import './App.css'
 import Custom from './components/Custom'
 import Form from './components/Form'
@@ -15,7 +15,10 @@ function App() {
         <Nav />
         <Form />
         <FetchWorkouts />
-        <Custom />
+        <Custom
+          key=''
+          muscleChoice=''
+        />
         </div>
     </div>
   )

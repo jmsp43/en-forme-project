@@ -33,7 +33,7 @@ h1, h2{
   border-radius: 20px 20px 20px 20px;
 }
 
-.missionNav, .libraryNav, .premiumNav{
+.homeNav, .missionNav, .libraryNav, .premiumNav{
   margin: 10px;
   text-decoration: none;
   font-family: fantasy;
@@ -41,7 +41,7 @@ h1, h2{
   font-size: large;
 }
 
-.missionNav:hover, .libraryNav:hover, .premiumNav:hover{
+.homeNav:hover, .missionNav:hover, .libraryNav:hover, .premiumNav:hover{
   background-color: aliceblue;
   padding: 15px;
   font-size: medium;

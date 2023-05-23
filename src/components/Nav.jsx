@@ -5,7 +5,8 @@ export default function Nav() {
   return (
     <div>
       <nav className="nav">
-        <Router>
+              <Router>
+              <Link className= 'homeNav' to="/">Home</Link> 
           <Link className= 'missionNav' to="/mission">Our Mission</Link>
           <Link className = 'libraryNav' to="/library">Exercise Library</Link>
           <Link className = 'premiumNav' to="/premium">Go Premium</Link>
